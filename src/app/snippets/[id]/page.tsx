@@ -1,4 +1,5 @@
 import { db } from "@/db";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
 interface Props {
@@ -21,7 +22,7 @@ const SnippetDetailPage = async ({ params }: Props) => {
       <div className="flex m-4 justify-between items-center">
         <h1 className="text-xl font-bold">{snippet?.title}</h1>
         <div className="space-x-4">
-          <button className="p-2 border rounded bg-blue-300">Edit</button>
+          <Link href={`/snippets/${snippet.id}/edit`} className="p-2 border rounded bg-blue-300">Edit</Link>
           <button className="p-2 border rounded bg-red-500">Delete</button>
         </div>
       </div>
