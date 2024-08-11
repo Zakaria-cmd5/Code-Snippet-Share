@@ -18,8 +18,16 @@ const SnippetDetailPage = async ({ params }: Props) => {
 
   return (
     <div>
-      <p>{snippet?.title}</p>
-      <p>{snippet?.code}</p>
+      <div className="flex m-4 justify-between items-center">
+        <h1 className="text-xl font-bold">{snippet?.title}</h1>
+        <div className="space-x-4">
+          <button className="p-2 border rounded bg-blue-300">Edit</button>
+          <button className="p-2 border rounded bg-red-500">Delete</button>
+        </div>
+      </div>
+      <pre className="p-3 border rounded bg-gray-200 border-gray-200">
+        <code>{snippet.code}</code>
+      </pre>
     </div>
   );
 };
