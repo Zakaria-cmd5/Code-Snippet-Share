@@ -3,7 +3,7 @@
 import { createSnippet } from "@/actions";
 import { useFormState } from "react-dom";
 
-const SnippetsNewPage = () => {
+const NewSnippetsPage = () => {
   const [formState, action] = useFormState(createSnippet, { message: "" });
 
   return (
@@ -43,4 +43,4 @@ const SnippetsNewPage = () => {
   );
 };
 
-export default SnippetsNewPage;
+export default NewSnippetsPage;
