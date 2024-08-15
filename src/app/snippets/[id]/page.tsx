@@ -44,3 +44,9 @@ const SnippetDetailPage = async ({ params }: Props) => {
 };
 
 export default SnippetDetailPage;
+
+export async function generateStaticParams() {
+  const snippet = await db.snippet.findMany();
+
+  return snippet.map((snippet) => ({ id: snippet.id.toString() }));
+}
